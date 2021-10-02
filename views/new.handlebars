@@ -1,0 +1,50 @@
+<form action="/restaurants_create" method="POST">
+    <div class="container">
+        <a href="/">
+            <button type="button" class="btn btn-outline-secondary btn-l btn-crud" >Home</button>
+        </a>
+        <div class="form-group col-md-6">
+            <label for="name">ID</label> 
+            <input type="text" class="form-control" name="id" id="id" placeholder="" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">名稱</label> 
+            <input type="text" class="form-control" name="name" id="name" placeholder="" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">英文名稱</label> 
+            <input type="text" class="form-control" name="name_en" id="name_en" placeholder="" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">電話</label> 
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="name">類別</label> 
+            <input type="text" class="form-control" name="category" id="category" placeholder="" required>
+        </div>
+        <div class="form-group col-md-8">
+            <label for="location">地址</label>
+            <input type="text" class="form-control" name="location" id="location" placeholder="" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="google_map">Google Map</label>
+            <input type="url" class="form-control" name="google_map" id="google_map" placeholder="" required>
+        </div>
+        <div class="form-group col-md-8">
+            <label for="image">照片網址</label>
+            <input type="url" class="form-control" name="image" id="image" placeholder="" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="rating">評分（0-5顆星）</label>
+            <input type="range" class="form-control-range" id="rating" name="rating" min="0" max="5" step="0.1" value=5
+                oninput="this.nextElementSibling.value = this.value" required/>
+            <output class="text-danger mt-1" style="font-size: 1rem; font-weight:bold;">5</output> <i class="fas fa-star text-danger" style="font-size: 1rem; font-weight:bold;"></i>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="description">特色介紹</label>
+            <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+        </div>
+        <button class="btn btn-outline-secondary btn-l btn-crud" type="submit">新增</button>
+    </div>
+</form>
