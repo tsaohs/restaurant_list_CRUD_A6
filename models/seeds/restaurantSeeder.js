@@ -1,15 +1,10 @@
-const mongoose = require('mongoose')
-const RestaurantCRUD = require('../Restaurant') // RestaurantCRUD todo model
-mongoose.connect('mongodb://localhost/restaurant_list',{useNewUrlParser: true, useUnifiedTopology: true}) // 設定連線到 mongoDB
+const RestaurantCRUD = require('../restaurant') // 載入 todo model
+const db = require('../../config/mongoose')
 const restaurantList = require('./restaurant.json')
-const db = mongoose.connection
-db.on('error', () => {
-    console.log('mongodb error!')
-})
+
 db.once('open', () => {
-    console.log('mongodb connected!')
     restaurantList.results.forEach( restaurant => {
-        // console.log(restaurant)
+        console.log(restaurant)
         RestaurantCRUD.create({
             id: restaurant.id,
             name: restaurant.name,

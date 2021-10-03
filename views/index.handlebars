@@ -1,28 +1,28 @@
 <!-- search bar -->
 <div class="container search-bar">
-    <div class="search-bar-outer">
-        <div class="search-bar-inner">
-            <form action="/search">
-                <h4 class="mb-2">尋找餐廳：</h4>
-                <div class="input-group">
-                    <input  type="text" name="keyword" 
-                            class="form-control" 
-                            placeholder="輸入餐廳、分類" 
-                            aria-label="Restaurant Name..." 
-                            value="{{keyword}}" 
-                            aria-describedby="search-button"
-                    >
-                    <div class="input-group-append">
-                        <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <form action="/search">
+        <h4 class="mb-2">尋找餐廳：</h4>
+        <div class="input-group">
+          <input 
+            type="text" 
+            name="keyword" 
+            class="form-control" 
+            placeholder="輸入餐廳中(英)文名稱、地區" 
+            aria-label="Restaurant Name..." 
+            value="{{keyword}}" 
+            aria-describedby="search-button"
+          >
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
         </div>
+      </form>
     </div>
-    <a href="./restaurants/new">
-        <button type="button" class="btn btn-outline-secondary btn-ml btn-crud" >Create</button>
-    </a>
+  </div>
 </div>
+
 <!-- restaurant list -->
 <div class="container mt-5">
   <div class="row">
@@ -47,7 +47,7 @@
                     <a href="./restaurants/{{ this._id }}/edit">
                         <button type="button" class="btn btn btn-outline-danger btn-sm btn-crud" >Edit</button>
                     </a><!-- 加入這行 -->
-                    <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                    <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
                         <button type="submit" class="btn btn btn-outline-danger btn-sm btn-crud">Delete</button>
                     </form>
                 </div>
